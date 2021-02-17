@@ -58,7 +58,9 @@ npm run start
 - Backend doesn't persists csv files anywhere, at runtime it finds the discrepancies and report.
 - Backend also have some checks to validate at least two files are provided.
 
-
+### Images
+![Before running](https://github.com/sureshappana/CSV-Discrepancy-Tool/blob/master/images/image1.png)
+![After running](https://github.com/sureshappana/CSV-Discrepancy-Tool/blob/master/images/image2.png)
 ## Checks and Testing
 1. Linting in place to follow the consistent pattern across the repository.
 2. Unit testing in place to verify the implementation.
