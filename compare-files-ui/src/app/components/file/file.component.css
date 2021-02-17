@@ -1,0 +1,18 @@
+
+.file-card {
+    margin: 20px;
+  }
+.file-header-image {
+    background-image: url('../../../assets/img/file-black-48dp.svg');
+    background-size: cover;
+  }
+
+.file-delete-icon {
+    margin-left: auto;
+    cursor:pointer;
+}
+
+::ng-deep .mat-card-header-text {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}

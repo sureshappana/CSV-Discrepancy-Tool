@@ -1,10 +1,5 @@
 # CSV Discrepancy Tool
 Aim of this application is find the discrepancies in two or more csv files.
-## Assumptions
-1. CSV Files contains 3 columns in the same order.
-2. Columns are email address, YouTube Channel and Subscriber Count
-3. Email addresses are reliable among the csv files and they exists in the same order.
-
 This application consists of frontend and backend. Users upload csv files from the frontend and those csv files are processed on backend and result sent back to frontend.
 
 Frontend was implemented in Angular 11.
@@ -18,10 +13,10 @@ To run this application the following setup is basically required:
 3. Angular CLI 12.16.3
 
 ### Frontend
-1. To run the frontend goto compare-files-frontend
+1. To run the frontend goto compare-files-ui
 
 ```json
-cd compare-files-frontend
+cd compare-files-ui
 ```
 2. Now fetch all the dependencies using
 ```json
@@ -81,6 +76,11 @@ Unit testcases in backend can be run as:
 npm run test
 ```
 Mocha is used in backend for unit testing
+
+## Assumptions
+1. CSV Files contains 3 columns in the same order.
+2. Columns are email address, YouTube Channel and Subscriber Count
+3. Email addresses are reliable among the csv files and they exists in the same order.
 
 ## What else can be done?
 1. More test cases can be added to frontend other than existing

@@ -1,0 +1,50 @@
+<h1 class="header">{{title}}</h1>
+
+<!--File picker and drag area-->
+<div class="droparea" appUploader (fileDropped)="onFileDropped($event)">
+  <div *ngIf="!showFiles">
+    <input type="file" #fileDropRef id="fileDropRef" accept=".csv" multiple (change)="onFilesSelected($event)" />
+    <img src="assets/img/file_upload-black-48dp.svg" alt="upload icon">
+    <h3>Drag and drop files here</h3>
+    <h3>or</h3>
+    <label for="fileDropRef">Browse</label>
+  </div>
+  <div>
+    <div class="content" *ngIf="showFiles" class="file-list">
+      <h2>Selected files (Add more files by drag and drop)</h2>
+      <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let file of files">
+          <app-file class="file" [file]="file" (deletedFile)="onFileDeletedHandler($event)"></app-file>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Options selection-->
+<div class="controlSection">
+  <div class="concernOptions">
+    <mat-label class="concernLabel">Select discrepancy:</mat-label>
+    <mat-radio-group aria-label="Select Concern" (change)="onConcernChecked($event)">
+      <mat-radio-button value="youtube_channel">Youtube Channel</mat-radio-button>
+      <mat-radio-button value="subscriber_count">Subscriber Count</mat-radio-button>
+      <mat-radio-button value="" checked>All</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="control-button-row">
+    <button mat-raised-button color="green" (click)="onResetClicked()">Reset</button>
+    <button mat-raised-button class="uploadButton" (click)="onUploadClicked()">Upload</button>
+  </div>
+</div>
+
+<!--Result selection-->
+<div class="resultSection" *ngIf="showResultSection">
+  <mat-progress-bar mode="determinate" value="{{progress}}"></mat-progress-bar>
+  <div>{{uploadStatus}}</div>
+  <div *ngIf="!isUploadError">
+    <h2>Discrepancy emails:</h2>
+    <mat-list>
+      <mat-list-item *ngFor="let email of discrepancyList"> {{email}} </mat-list-item>
+    </mat-list>
+  </div>
+</div>

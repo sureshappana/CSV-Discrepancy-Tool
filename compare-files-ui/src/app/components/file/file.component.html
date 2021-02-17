@@ -1,0 +1,11 @@
+<!--To display individual file card-->
+<mat-card class="file-card">
+    <mat-card-header style="display: flex;">
+        <div mat-card-avatar class="file-header-image"></div>
+        <mat-card-title id="fileName">{{file.name}}</mat-card-title>
+        <div class="file-delete-icon">
+            <div id="fileSize">{{convertBytes(file.size)}}</div>
+            <img src="assets/img/delete-black-24dp.svg" alt="Delete icon" (click)="onFileDeleted()" />
+        </div>
+    </mat-card-header>
+</mat-card>
